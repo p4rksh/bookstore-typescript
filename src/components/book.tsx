@@ -3,10 +3,11 @@ import { Container, Header } from 'semantic-ui-react';
 
 type TBookProps = {
   title: string,
-  img: any
+  img: any,
+  price: number,
 }
 
-export default function Book({ title, img }: TBookProps) {
+export default function Book({ title, img, price }: TBookProps) {
   const [checked, setCheck] = useState(false);
   if (checked) {
     window.alert(`${title} is checked!!!`);
@@ -26,6 +27,7 @@ export default function Book({ title, img }: TBookProps) {
         src={img}
         alt={title}
       />
+      <span>{price}</span>
     </Container>
   );
 }
