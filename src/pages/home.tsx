@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Book from '../components/book';
 import Wallet from '../components/wallet'
 import LearningReact from '../assets/images/learningReact.jpg';
@@ -39,9 +39,9 @@ export default function Home() {
       <h1>Book Store</h1>
       <section style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
         <p>샘플 북스토어</p>
-        <Wallet money={money}/>
+        <Wallet money={money} />
         <div className="booklist">
-          {bookList.map(({ title, img }) => (
+          {bookList.map(({ title, price, img }) => (
             <Book
               key={title}
               title={title}
